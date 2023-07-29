@@ -1,6 +1,19 @@
+import theme from '@/data/theme'
 import type { TailwindColor } from './types/tailwind'
 
-const MAP_COLOR_VARIANT_TO_BG: Record<TailwindColor, string> = {
+export function convertAsteriskToStrongTag(str: string) {
+    return str.replace(
+        /\*{1,2}(.*?)\*{1,2}/g,
+        `<strong class="font-medium ${MAP_COLOR_VARIANT_TO_TEXT[theme.colors.primary]
+        }">$1</strong>`
+    )
+}
+
+export function formatDate(date: Date) {
+	return new Intl.DateTimeFormat('en-GB').format(date)
+}
+
+export const MAP_COLOR_VARIANT_TO_BG: Record<TailwindColor, string> = {
 	brand: 'bg-brand-500',
 	orange: 'bg-orange-500',
 	violet: 'bg-violet-500',
@@ -20,7 +33,7 @@ const MAP_COLOR_VARIANT_TO_BG: Record<TailwindColor, string> = {
 	rose: 'bg-rose-500',
 }
 
-const MAP_COLOR_VARIANT_TO_TEXT: Record<TailwindColor, string> = {
+export const MAP_COLOR_VARIANT_TO_TEXT: Record<TailwindColor, string> = {
 	brand: 'text-brand-500',
 	orange: 'text-orange-500',
 	violet: 'text-violet-500',
@@ -40,4 +53,8 @@ const MAP_COLOR_VARIANT_TO_TEXT: Record<TailwindColor, string> = {
 	rose: 'text-rose-500',
 }
 
-export { MAP_COLOR_VARIANT_TO_BG, MAP_COLOR_VARIANT_TO_TEXT }
+export function removeTrailingSlash(pathname: string) {
+	const matchTrailingSlash = /\w+\/$/
+	if (matchTrailingSlash.test(pathname)) return pathname.slice(0, -1)
+	return pathname
+}
