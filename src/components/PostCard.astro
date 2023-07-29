@@ -12,7 +12,7 @@ const { title, publishedAt, description, slug } = Astro.props
 ---
 
 <a
-	class='group flex max-w-sm cursor-pointer flex-col gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400'
+	class='group flex max-w-sm cursor-pointer flex-col gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:border-neutral-400'
 	href={`/blog/${slug}`}
 >
 	<div
@@ -21,8 +21,10 @@ const { title, publishedAt, description, slug } = Astro.props
 		<div class='flex flex-grow items-center'>
 			<p class='text-neutral-100 truncate'>{title}</p>
 		</div>
-		<p class='flex flex-row items-center gap-4 flex-shrink-0'>
+		<span
+			class='flex flex-row items-center gap-4 flex-shrink-0 text-xs italic leading-6'
+		>
 			{format(new Date(publishedAt), 'MMM dd')}
-		</p>
+		</span>
 	</div>
 </a>
