@@ -1,0 +1,67 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import SocialLinks from '@/components/SocialLinks.astro'
+import Link from '@/components/shared/Link.astro'
+import { convertAsteriskToStrongTag, formatDate } from '@/utils/helpers'
+
+import { data, projects } from '@/data/projects'
+---
+
+<Layout title='Template - All Posts'>
+	<main class='flex flex-col gap-20'>
+		<article class='flex flex-col gap-8'>
+			<h1 class='text-2xl text-neutral-100 font-serif'>About</h1>
+		</article>
+
+		<article class='flex flex-col gap-4'>
+			<section class='flex flex-col gap-4 leading-6'>
+				<p>Hi! I'm a software engineer residing in Bangalore, India.</p>
+				<p>
+					In my free time, I work on <Link
+						href='/projects'
+						label='side projects'
+						isUnderline
+						target='_self'
+					/>.
+				</p>
+				<p>
+					My main programming language is JavaScript/TypeScript but
+					I've been learning Rust as well. I've also dabbled in Go,
+					Lua, and Python. I write articles regularly about the things
+					I'm learning and the projects I'm working on.
+				</p>
+				<p>
+					When not working on side projects, I read and occasionally
+					play video games. Check out what I'm reading and playing
+					right <Link
+						href='/now'
+						label='now'
+						isUnderline
+						target='_self'
+					/>. You can also check out the <Link
+						href='/uses'
+						label='tools and devices'
+						isUnderline
+						target='_self'
+					/> I use to get my work done.
+				</p>
+				<p>
+					Since you're here, I'd appreciate it if you checked out some
+					of my <Link
+						href='/posts'
+						label='articles'
+						isUnderline
+						target='_self'
+					/>. And if you happen to like what you read, let me know :)
+				</p>
+				<p>
+					I'm most active on these two platforms. If you're interested
+					in what I'm doing or what I'm saying, do give me a follow
+					here:
+				</p>
+				<SocialLinks />
+			</section>
+		</article>
+	</main>
+</Layout>
