@@ -23,6 +23,9 @@ dependencies:
   '@fontsource/inter':
     specifier: ^5.0.5
     version: 5.0.5
+  '@fontsource/merriweather':
+    specifier: ^5.0.5
+    version: 5.0.5
   '@types/react':
     specifier: ^18.0.21
     version: 18.2.17
@@ -923,6 +926,10 @@ packages:
 
   /@fontsource/inter@5.0.5:
     resolution: {integrity: sha512-RE1JmWRB6Kxo+1nXUnORSSH5uKgUZ2QEQE+h/nsNt758C+17G9y26E9QiAsIqsG13NpKhwn22EeECfyC+da5ew==}
+    dev: false
+
+  /@fontsource/merriweather@5.0.5:
+    resolution: {integrity: sha512-YDO04vxm76kwWNkX3FOchkVnO1L0iMuicqRHj4dIq7MXbwIYa21WLR50z9Rmhyl5I/hycd6nysHk3jdD7BzkOg==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:

@@ -22,6 +22,7 @@ module.exports = {
             },
             fontFamily: {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
             },
         },
     },
