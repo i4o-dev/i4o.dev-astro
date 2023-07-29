@@ -17,16 +17,16 @@ type Props = {
 
 const { title, description, noindex, og } = Astro.props
 
-const DEFAULT_TITLE_PAGE = 'Astro - Portfolio template'
+const DEFAULT_TITLE_PAGE = 'Ilango Rajagopal'
 const DEFAULT_DESCRIPTION_PAGE =
-	'A minimal portfolio template built with Astro and Tailwindcss.'
+	'Personal website and blog of Ilango Rajagopal'
 const DEFAULT_URL_SITE = SITE_URL
 
 const openGraph = {
 	title: og?.title || DEFAULT_TITLE_PAGE,
 	type: og?.type || 'website',
-	image: og?.image || '/opengraph-image.jpg',
-	alt: og?.alt || 'astro portfolio template image',
+	image: og?.image || '/og.png',
+	alt: og?.alt || '',
 	url: DEFAULT_URL_SITE,
 	description: og?.description || DEFAULT_DESCRIPTION_PAGE,
 }
@@ -49,12 +49,30 @@ const openGraph = {
 			},
 		}}
 		twitter={{
-			creator: '@itsstormzz_',
+			creator: '@i4o_dev',
 		}}
 		extend={{
 			link: [
-				{ rel: 'icon', href: '/favicon.svg' },
-				{ rel: 'sitemap', href: '/sitemap-index.xml' },
+				{ rel: 'manifest', href: '/site.webmanifest' },
+				{
+					rel: 'apple-touch-icon',
+					sizes: '180x180',
+					href: '/apple-touch-icon.png',
+				},
+				{
+					rel: 'icon',
+					type: 'image/png',
+					sizes: '32x32',
+					href: '/favicon-32x32.png',
+				},
+				{
+					rel: 'icon',
+					type: 'image/png',
+					sizes: '16x16',
+					href: '/favicon-16x16.png',
+				},
+				{ rel: 'mask-icon', href: '/safari-pinned-tab.svg' },
+				// { rel: 'sitemap', href: '/sitemap-index.xml' },
 			],
 			meta: [
 				{
@@ -69,7 +87,7 @@ const openGraph = {
 				{ name: 'twitter:card', content: 'summary_large_image' },
 				{ name: 'twitter:title', content: openGraph.title },
 				{ name: 'twitter:description', content: openGraph.description },
-				{ name: 'twitter:site', content: '@itsstormzz_' },
+				{ name: 'twitter:site', content: '@i4o_dev' },
 			],
 		}}
 	/>
