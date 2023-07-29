@@ -1,3 +1,4 @@
+import querystring from 'node:querystring'
 import theme from '@/data/theme'
 import type { TailwindColor } from './types/tailwind'
 
@@ -85,3 +86,68 @@ export function sortAndGroupPostsByYear(posts: any[]) {
 
     return sortedAndGroupedArticles
 }
+
+const client_id = import.meta.env.SPOTIFY_CLIENT_ID
+const client_secret = import.meta.env.SPOTIFY_CLIENT_SECRET
+const refresh_token = import.meta.env.SPOTIFY_REFRESH_TOKEN
+
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`
+// const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term`;
+// const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`
+
+const getAccessToken = async () => {
+    try {
+        return fetch(TOKEN_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                Authorization: `Basic ${basic}`,
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: querystring.stringify({
+                grant_type: 'refresh_token',
+                refresh_token,
+            }),
+        })
+    } catch (error) {
+        console.error(error)
+        return null
+    }
+}
+
+export const getNowPlaying = async () => {
+    const data = await getAccessToken()
+
+    if (data) {
+        const { access_token } = await data.json()
+
+        return fetch(NOW_PLAYING_ENDPOINT, {
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+        })
+    } else {
+        return null
+    }
+}
+
+// export const getTopTracks = async () => {
+// 	const { access_token } = await getAccessToken();
+//
+// 	return fetch(TOP_TRACKS_ENDPOINT, {
+// 		headers: {
+// 			Authorization: `Bearer ${access_token}`,
+// 		},
+// 	});
+// };
+//
+// export const getRecentlyPlayed = async () => {
+// 	const { access_token } = await getAccessToken();
+//
+// 	return fetch(RECENTLY_PLAYED_ENDPOINT, {
+// 		headers: {
+// 			Authorization: `Bearer ${access_token}`,
+// 		},
+// 	});
+// };
