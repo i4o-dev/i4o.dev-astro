@@ -11,11 +11,8 @@ import { data, projects } from '@/data/projects'
 <Layout title='About'>
 	<main class='flex flex-col gap-20'>
 		<article class='flex flex-col gap-8'>
-			<h1 class='text-2xl text-neutral-100 font-serif'>About</h1>
-		</article>
-
-		<article class='flex flex-col gap-4'>
-			<section class='flex flex-col gap-4 leading-6'>
+			<h1 class='text-3xl text-neutral-100 font-serif'>About</h1>
+			<section class='flex flex-col prose prose-invert prose-p:my-4 first:prose-p:mt-0'>
 				<p>Hi! I'm a software engineer residing in Bangalore, India.</p>
 				<p>
 					In my free time, I work on <Link
@@ -56,8 +53,8 @@ import { data, projects } from '@/data/projects'
 						target='_self'
 					/>. And if you happen to like what you read, let me know :)
 				</p>
-				<SocialLinks />
 			</section>
+			<SocialLinks />
 		</article>
 	</main>
 </Layout>

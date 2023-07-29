@@ -15,15 +15,19 @@ import presentation from '@/data/presentation'
 import { projects } from '@/data/projects'
 import theme from '@/data/theme'
 
-const posts = await getCollection('posts')
+const allPosts = await getCollection('posts')
+const onlyPublished = allPosts.filter((post) => !post.data.draft)
+const sortedPosts = onlyPublished.sort(
+	(a, b) => new Date(b.data.date_published).valueOf() - new Date(a.data.date_published).valueOf()
+)
 ---
 
 <Layout>
 	<main class='flex flex-col gap-20'>
 		<article class='flex flex-col gap-8'>
 			<h1 class='text-3xl text-neutral-100 font-serif'>{presentation.title}</h1>
-			<h2
-				class='max-w-[60ch] leading-6'
+			<p
+				class='max-w-[60ch] leading-6 prose prose-invert'
 				set:html={convertAsteriskToStrongTag(presentation.description)}
 			/>
 			<SocialLinks />
@@ -31,7 +35,7 @@ const posts = await getCollection('posts')
 
 		<article class='flex flex-col gap-8'>
 			<header class='flex w-full flex-row justify-between gap-2'>
-				<h3 class='text-lg text-neutral-100'>Latest Posts</h3>
+				<h2 class='text-xl text-neutral-100'>Latest Posts</h2>
 				<Link
 					href='/blog'
 					label='See all posts'
@@ -39,18 +43,18 @@ const posts = await getCollection('posts')
 					target='_self'
 				/>
 			</header>
-			{posts.length === 0 && <p>Soon, stay connected 👀...</p>}
+			{onlyPublished.length === 0 && <p>Soon, stay connected 👀...</p>}
 
-			<section class='flex flex-col gap-4 md:flex-row md:flex-wrap'>
+			<section class='grid grid-cols-1 gap-4 md:grid-cols-2'>
 				{
-					posts.length !== 0 &&
-						posts
+					onlyPublished.length !== 0 &&
+						onlyPublished
 							.slice(0, 2)
 							.map((post) => (
 								<PostCard
-									publishedAt={post.data.publishedAt}
+									publishedAt={post.data.date_published}
 									title={post.data.title}
-									description={post.data.description}
+									description={post.data.excerpt}
 									slug={post.slug}
 								/>
 							))
@@ -60,7 +64,7 @@ const posts = await getCollection('posts')
 
 		<article class='flex flex-col gap-8'>
 			<header class='flex w-full flex-row justify-between gap-2'>
-				<h3 class='text-lg text-neutral-100'>Featured Projects</h3>
+				<h2 class='text-xl text-neutral-100'>Featured Projects</h2>
 				<Link
 					href='/projects'
 					label='See all projects'
@@ -82,7 +86,7 @@ const posts = await getCollection('posts')
 
 		<!-- <article class='flex flex-col gap-8'> -->
 		<!-- 	<header class='flex w-full flex-row justify-between gap-2'> -->
-		<!-- 		<h3 class='text-lg text-neutral-100'>Get in touch</h3> -->
+		<!-- 		<h3 class='text-xl text-neutral-100'>Get in touch</h3> -->
 		<!-- 	</header> -->
 		<!-- 	<p> -->
 		<!-- 		Email me at <Link -->
