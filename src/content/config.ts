@@ -10,4 +10,17 @@ const postsCollection = defineCollection({
     }),
 })
 
-export const collections = { posts: postsCollection }
+const bookNotesCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        author: z.string(),
+        date_published: z.date(),
+        draft: z.boolean().default(false),
+    }),
+})
+
+export const collections = {
+    posts: postsCollection,
+    bookNotes: bookNotesCollection,
+}
