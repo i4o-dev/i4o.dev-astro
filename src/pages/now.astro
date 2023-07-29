@@ -75,9 +75,13 @@ import Link from '@/components/shared/Link.astro'
 
 				<p>
 					I read regularly, usually two books at a time — one fiction
-					and one non-fiction. Check out what I'm <Link to='/reading'>
-						reading
-					</Link> and all the books I've read.
+					and one non-fiction. Check out what I'm <Link
+						href='/reading'
+						label='reading'
+                        isUnderline
+						target='_self'
+					/>
+					 and all the books I've read.
 				</p>
 			</section>
 
