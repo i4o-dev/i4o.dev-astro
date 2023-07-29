@@ -27,8 +27,8 @@ const presentation: Presentation = {
 			link: 'https://github.com/i4o-dev',
 		},
 		{
-			label: 'Bento',
-			link: 'https://bento.me/i4o',
+			label: 'Newsletter',
+			link: 'https://ilango.substack.com',
 		},
 	],
 }
