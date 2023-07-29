@@ -58,3 +58,30 @@ export function removeTrailingSlash(pathname: string) {
     if (matchTrailingSlash.test(pathname)) return pathname.slice(0, -1)
     return pathname
 }
+
+export function sortAndGroupPostsByYear(posts: any[]) {
+    const articlesGroupedByYear = posts.reduce((groups, post) => {
+        const year = post.data.date_published.toISOString().split('-')[0]
+        if (!groups[year]) {
+            groups[year] = []
+        }
+
+        groups[year].push(post)
+
+        return groups
+    }, {})
+
+    const sortedAndGroupedArticles: any = {}
+
+    for (const year in articlesGroupedByYear) {
+        const sortedArticlesList = articlesGroupedByYear[year].sort(
+            (a: any, b: any) =>
+                new Date(b.data.date_published).valueOf() -
+                new Date(a.data.date_published).valueOf()
+        )
+
+        sortedAndGroupedArticles[year] = sortedArticlesList
+    }
+
+    return sortedAndGroupedArticles
+}
