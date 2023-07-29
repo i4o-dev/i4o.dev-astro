@@ -73,7 +73,9 @@ const posts = await getCollection('posts')
 			<section class='flex flex-col gap-4'>
 				{
 					projects.length !== 0 &&
-						projects.map((project) => <ProjectCard {...project} />)
+						projects
+							.filter((project) => project.isFeatured)
+							.map((project) => <ProjectCard {...project} />)
 				}
 			</section>
 		</article>
