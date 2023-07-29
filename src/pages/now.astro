@@ -7,10 +7,9 @@ import Link from '@/components/shared/Link.astro'
 	<main class='flex flex-col gap-20'>
 		<article class='flex flex-col gap-8'>
 			<h1 class='text-2xl text-neutral-100 font-serif'>Now</h1>
-		</article>
-
-		<article class='flex flex-col gap-8'>
-			<section class='flex flex-col gap-4 leading-6'>
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What I'm working on right now?
 				</h3>
@@ -21,10 +20,14 @@ import Link from '@/components/shared/Link.astro'
 
 				<p>I'm working on getting better at Rust.</p>
 			</section>
-			<section class='flex flex-col gap-4 leading-6'>
+
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What are the projects I've planned for the coming months?
 				</h3>
+
 				<p>
 					<del
 						>I'm planning to launch 3 projects I've been working
@@ -34,6 +37,7 @@ import Link from '@/components/shared/Link.astro'
 						tuning them and get them ready for launch soon.</del
 					>
 				</p>
+
 				<p>
 					<em>
 						Update: Well, I didn't launch them as planned. TBH, I
@@ -44,6 +48,7 @@ import Link from '@/components/shared/Link.astro'
 						tiny momentum and get it ready for launch soon.
 					</em>
 				</p>
+
 				<p>
 					<em>
 						Update: I found out how and why people were discovering
@@ -51,16 +56,21 @@ import Link from '@/components/shared/Link.astro'
 						kit also called Catalyst at Tailwind Connect 2023.
 					</em>
 				</p>
+
 				<p>
 					I also want to launch other projects that are in various
 					stages of completion:
 				</p>
-				<ul class='list-disc ml-4'>
+                
+				<ul>
 					<li>Aurelius</li>
 					<li>Rescribe</li>
 				</ul>
 			</section>
-			<section class='flex flex-col gap-4 leading-6'>
+
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What is my current short-term goal?
 				</h3>
@@ -68,7 +78,9 @@ import Link from '@/components/shared/Link.astro'
 				<p>$1k MRR by the end of the year from my projects.</p>
 			</section>
 
-			<section class='flex flex-col gap-4 leading-6'>
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What am I reading right now?
 				</h3>
@@ -78,31 +90,36 @@ import Link from '@/components/shared/Link.astro'
 					and one non-fiction. Check out what I'm <Link
 						href='/reading'
 						label='reading'
-                        isUnderline
+						isUnderline
 						target='_self'
 					/>
 					 and all the books I've read.
 				</p>
 			</section>
 
-			<section class='flex flex-col gap-4 leading-6'>
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What am I playing right now?
 				</h3>
 
 				<p>I play video games whenever I can. I'm currently playing:</p>
-				<ul class='list-disc ml-4'>
+				<ul>
 					<li>Age of Empires 4</li>
 				</ul>
 			</section>
-			<section class='flex flex-col gap-4 leading-6'>
+
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-2 first:prose-p:mt-0'
+			>
 				<h3 class='text-lg text-neutral-100'>
 					What am I watching right now?
 				</h3>
 
-				<ul class='list-disc ml-4'>
-					<li>Shingeki no Kyojin</li>
+				<ul>
 					<li>Jack Ryan S4</li>
+					<li>Foundations</li>
 				</ul>
 			</section>
 		</article>
