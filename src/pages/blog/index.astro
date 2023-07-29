@@ -32,7 +32,7 @@ const sortedYears = Object.keys(groupedPosts).sort(
 							<div class='flex flex-col items-start gap-4'>
 								{groupedPosts[year].map((post, index) => (
 									<div
-										class='flex flex-wrap items-end justify-start gap-2 text-left'
+										class='flex flex-wrap items-center justify-start gap-2 text-left'
 										key={`post-${index}`}
 									>
 										<a
@@ -43,7 +43,7 @@ const sortedYears = Object.keys(groupedPosts).sort(
 										>
 											{post.data.title}
 										</a>
-										<span class='text-xs italic leading-6'>
+										<span class='text-xs italic'>
 											{format(
 												new Date(
 													post.data.date_published
