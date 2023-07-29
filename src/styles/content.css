@@ -28,8 +28,12 @@
 	@apply list-disc;
 }
 
-.post blockquote {
-	@apply flex flex-row gap-2 before:block before:h-auto before:w-1 before:max-w-[1px] before:bg-brand-400 before:content-[''];
+/* .post blockquote { */
+/* 	@apply flex flex-row gap-2 before:block before:h-auto before:w-1 before:max-w-[2px] before:bg-brand-400 before:content-['']; */
+/* } */
+
+.post blockquote > p {
+    @apply !m-0;
 }
 
 .post pre {
