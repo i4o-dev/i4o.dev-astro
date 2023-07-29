@@ -20,10 +20,7 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^4.0.0
     version: 4.0.0(astro@2.9.6)(tailwindcss@3.3.3)
-  '@fontsource/jetbrains-mono':
-    specifier: ^5.0.5
-    version: 5.0.5
-  '@fontsource/open-sans':
+  '@fontsource/inter':
     specifier: ^5.0.5
     version: 5.0.5
   '@types/react':
@@ -924,12 +921,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/jetbrains-mono@5.0.5:
-    resolution: {integrity: sha512-Smuppiu7QzNCatnccTXdUYbxUmEVywklM/hntWKhig0Q+hm7SYzQpNpxCR1Gm8npE8jpaKslhIsBPGuTBGZgdA==}
-    dev: false
-
-  /@fontsource/open-sans@5.0.5:
-    resolution: {integrity: sha512-gxFAandXkpbHKysq5gXk1zEpx44izNyaJs82gjnx8Z0Qi2nwCamweowiSGv42JxLZPgM8RB5amztHxPCeKcBJw==}
+  /@fontsource/inter@5.0.5:
+    resolution: {integrity: sha512-RE1JmWRB6Kxo+1nXUnORSSH5uKgUZ2QEQE+h/nsNt758C+17G9y26E9QiAsIqsG13NpKhwn22EeECfyC+da5ew==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
