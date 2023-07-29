@@ -8,13 +8,15 @@ const posts = await getCollection('posts')
 
 <Layout title='Template - All Posts'>
 	<main class='flex flex-col gap-20'>
-		<h1 class='text-2xl text-neutral-100'>Posts</h1>
+		<article class='flex flex-col gap-8'>
+			<h1 class='text-2xl text-neutral-100 font-serif'>Posts</h1>
+		</article>
 
 		<article class='flex flex-col gap-4'>
 			{
 				posts.map((post) => (
 					<a
-						class='group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all hover:text-neutral-100'
+						class='group flex flex-col gap-2 py-4 transition-all hover:text-neutral-100'
 						href={`/posts/${post.slug}`}
 					>
 						<div class='flex w-full items-center justify-between'>
@@ -44,7 +46,6 @@ const posts = await getCollection('posts')
 								</svg>
 							</div>
 						</div>
-						<p>{post.data.description}</p>
 					</a>
 				))
 			}
