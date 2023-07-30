@@ -1,10 +1,10 @@
-import querystring from 'node:querystring'
 import theme from '@/data/theme'
-import type { TailwindColor } from './types/tailwind'
+import type { Artist, TailwindColor } from './types'
 
 export function convertAsteriskToStrongTag(str: string) {
     return str.replace(
         /\*{1,2}(.*?)\*{1,2}/g,
+        // @ts-ignore
         `<strong class="font-normal ${MAP_COLOR_VARIANT_TO_TEXT[theme.colors.primary]
         }">$1</strong>`
     )
@@ -87,53 +87,73 @@ export function sortAndGroupPostsByYear(posts: any[]) {
     return sortedAndGroupedArticles
 }
 
-const client_id = import.meta.env.SPOTIFY_CLIENT_ID
-const client_secret = import.meta.env.SPOTIFY_CLIENT_SECRET
-const refresh_token = import.meta.env.SPOTIFY_REFRESH_TOKEN
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`
-// const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term`;
-// const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`
+// code shamelessly inspired from: https://github.com/dreyfus92/astro-portfolio
+export const getAccessToken = async () => {
+    // Get environment variables
+    const refresh_token = import.meta.env.SPOTIFY_REFRESH_TOKEN
+    const client_id = import.meta.env.SPOTIFY_CLIENT_ID
+    const client_secret = import.meta.env.SPOTIFY_CLIENT_SECRET
 
-const getAccessToken = async () => {
-    try {
-        return fetch(TOKEN_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                Authorization: `Basic ${basic}`,
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: querystring.stringify({
-                grant_type: 'refresh_token',
-                refresh_token,
-            }),
-        })
-    } catch (error) {
-        console.error(error)
-        return null
-    }
+    const basic = Buffer.from(`${client_id}:${client_secret}`).toString(
+        'base64'
+    )
+    const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
+
+    const response = await fetch(TOKEN_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            Authorization: `Basic ${basic}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            grant_type: 'refresh_token',
+            refresh_token,
+        }),
+    })
+    return response.json()
 }
 
-export const getNowPlaying = async () => {
-    const data = await getAccessToken()
+export const nowPlaying = async () => {
+    const { access_token } = await getAccessToken()
 
-    if (data) {
-        const { access_token } = await data.json()
+    const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`
 
-        return fetch(NOW_PLAYING_ENDPOINT, {
-            headers: {
-                Authorization: `Bearer ${access_token}`,
-            },
+    return fetch(NOW_PLAYING_ENDPOINT, {
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+    })
+}
+
+export const getCurrentTrack = async () => {
+    const response = await nowPlaying()
+
+    if (response.status === 204 || response.status > 400) {
+        return new Response(JSON.stringify({ isPlaying: false }), {
+            status: 200,
         })
-    } else {
-        return null
     }
+
+    const { item } = await response.json()
+
+    const track = {
+        isPlaying: true,
+        title: item.name,
+        artist: item.artists.map((_artist: Artist) => _artist.name).join(', '),
+        url: item.external_urls.spotify,
+        img: item.album.images[0].url,
+    }
+
+    return new Response(JSON.stringify(track), {
+        status: 200,
+    })
 }
 
 // export const getTopTracks = async () => {
 // 	const { access_token } = await getAccessToken();
+//
+//  const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term`;
 //
 // 	return fetch(TOP_TRACKS_ENDPOINT, {
 // 		headers: {
@@ -144,6 +164,8 @@ export const getNowPlaying = async () => {
 //
 // export const getRecentlyPlayed = async () => {
 // 	const { access_token } = await getAccessToken();
+//
+//  const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
 //
 // 	return fetch(RECENTLY_PLAYED_ENDPOINT, {
 // 		headers: {
