@@ -10,14 +10,15 @@ import '@/styles/content.css'
 
 export interface Props {
 	title?: string
+	description?: string
 }
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang='en'>
-	<SEOTags title={title || 'Ilango Rajagopal'} />
+	<SEOTags title={title || 'Ilango Rajagopal'} description={description} />
 
 	<body
 		class='mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16 font-sans'
