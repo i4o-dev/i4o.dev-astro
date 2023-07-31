@@ -3,6 +3,7 @@ import { CollectionEntry, getCollection } from 'astro:content'
 import { format } from 'date-fns'
 import title from 'title'
 import Layout from '@/layouts/Layout.astro'
+import { SITE_URL } from '@/data/config'
 
 const { slug } = Astro.params
 const posts = await getCollection('posts')
@@ -13,6 +14,10 @@ type Props = {
 
 const post = posts.find((post) => post.slug === slug)
 const { Content, remarkPluginFrontmatter } = await post.render()
+const permalink = `${SITE_URL}/blog/${post.slug}`
+const tweetMessage = `I just read this awesome post! Check it out: 
+
+${post.data.title} 👇`
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
@@ -58,6 +63,22 @@ const { Content, remarkPluginFrontmatter } = await post.render()
 			>
 				<Content />
 			</article>
+			<div class='mt-16 flex items-center gap-2'>
+				<span class='text-sm font-semibold uppercase'>Share this on:</span>
+				<a
+					href={`https://twitter.com/intent/tweet?${new URLSearchParams(
+						{
+							url: permalink,
+							text: tweetMessage,
+						}
+					)}`}
+					class='inline-flex items-center justify-start gap-2 !text-sm !font-semibold !no-underline'
+					target='_blank'
+					rel='noreferrer noopener'
+				>
+					Twitter
+				</a>
+			</div>
 		</div>
 	</main>
 </Layout>
