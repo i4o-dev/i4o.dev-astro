@@ -4,11 +4,7 @@ import { format } from 'date-fns'
 import Layout from '@/layouts/Layout.astro'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
-export const prerender = true
-
-const bookNotes = await getCollection('bookNotes', ({data}) => {
-    return !data.draft
-})
+const bookNotes = await getCollection('bookNotes', ({data}) => !data.draft)
 const sortedNotes = bookNotes.sort(
 	(a, b) =>
 		new Date(b.data.date_published).valueOf() -

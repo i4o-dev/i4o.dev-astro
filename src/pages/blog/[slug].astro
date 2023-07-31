@@ -3,24 +3,15 @@ import { CollectionEntry, getCollection } from 'astro:content'
 import { format } from 'date-fns'
 import title from 'title'
 import Layout from '@/layouts/Layout.astro'
-import { formatDate } from '@/utils/helpers'
 
-export const prerender = true
-
-export async function getStaticPaths() {
-	const posts = await getCollection('posts')
-
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
-	}))
-}
+const { slug } = Astro.params
+const posts = await getCollection('posts')
 
 type Props = {
 	post: CollectionEntry<'posts'>
 }
 
-const { post } = Astro.props
+const post = posts.find((post) => post.slug === slug)
 const { Content, remarkPluginFrontmatter } = await post.render()
 ---
 

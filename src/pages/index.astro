@@ -16,9 +16,8 @@ import presentation from '@/data/presentation'
 import { projects } from '@/data/projects'
 import theme from '@/data/theme'
 
-const allPosts = await getCollection('posts')
-const onlyPublished = allPosts.filter((post) => !post.data.draft)
-const sortedPosts = onlyPublished.sort(
+const posts = await getCollection('posts', ({ data }) => !data.draft)
+const sortedPosts = posts.sort(
 	(a, b) =>
 		new Date(b.data.date_published).valueOf() -
 		new Date(a.data.date_published).valueOf()
@@ -48,12 +47,12 @@ const sortedPosts = onlyPublished.sort(
 					target='_self'
 				/>
 			</header>
-			{onlyPublished.length === 0 && <p>Soon, stay connected 👀...</p>}
+			{posts.length === 0 && <p>Soon, stay connected 👀...</p>}
 
 			<section class='grid grid-cols-1 gap-4 md:grid-cols-2'>
 				{
-					onlyPublished.length !== 0 &&
-						onlyPublished
+					sortedPosts.length !== 0 &&
+						sortedPosts
 							.slice(0, 2)
 							.map((post) => (
 								<PostCard
