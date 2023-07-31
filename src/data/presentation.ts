@@ -4,7 +4,7 @@ type Social = {
 }
 
 type Presentation = {
-    logo: string
+	logo: string
 	mail: string
 	title: string
 	description: string
@@ -12,7 +12,7 @@ type Presentation = {
 }
 
 const presentation: Presentation = {
-    logo: 'https://i4o.dev/logo.png',
+	logo: 'https://i4o.dev/logo.png',
 	mail: 'hey@i4o.dev',
 	title: 'Hi, I’m Ilango 👋',
 	description:
