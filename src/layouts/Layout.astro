@@ -33,5 +33,14 @@ const { title, description } = Astro.props
 				font-family: 'Inter';
 			}
 		</style>
+		{
+			import.meta.env.MODE === 'production' ? (
+				<script
+					async
+					src='https://analytics.i4o.dev/script.js'
+					data-website-id='a23700f3-870e-47f9-8912-52e806ef4d43'
+				/>
+			) : null
+		}
 	</body>
 </html>
