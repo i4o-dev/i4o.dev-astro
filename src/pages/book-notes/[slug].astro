@@ -48,7 +48,7 @@ const { Content, remarkPluginFrontmatter } = await note.render()
 			<header role='presentation'>
 				<div class='flex items-center gap-2'>
 					<span class='text-xs font-semibold uppercase'>
-						{format(new Date(post.data.date_published), 'PP')}
+						{format(new Date(note.data.date_published), 'PP')}
 					</span>
 					<span>·</span>
 					<span class='text-xs font-semibold uppercase'>
