@@ -4,8 +4,8 @@ import type { Artist, TailwindColor } from './types'
 export function convertAsteriskToStrongTag(str: string) {
 	return str.replace(
 		/\*{1,2}(.*?)\*{1,2}/g,
-		// @ts-ignore
 		`<strong class="font-normal ${
+			// @ts-ignore
 			MAP_COLOR_VARIANT_TO_TEXT[theme.colors.primary]
 		}">$1</strong>`
 	)
