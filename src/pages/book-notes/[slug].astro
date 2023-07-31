@@ -17,7 +17,7 @@ type Props = {
 }
 
 const { note } = Astro.props
-const { Content } = await note.render()
+const { Content, remarkPluginFrontmatter } = await note.render()
 ---
 
 <Layout title={note.data.title} description={note.data.excerpt}>
@@ -44,9 +44,15 @@ const { Content } = await note.render()
 		</a>
 		<div class='post mx-auto flex w-full max-w-none flex-col gap-12'>
 			<header role='presentation'>
-				<span class='text-xs font-semibold uppercase'>
-					{format(new Date(note.data.date_published), 'PP')}
-				</span>
+				<div class='flex items-center gap-2'>
+					<span class='text-xs font-semibold uppercase'>
+						{format(new Date(post.data.date_published), 'PP')}
+					</span>
+					<span>·</span>
+					<span class='text-xs font-semibold uppercase'>
+						{remarkPluginFrontmatter.minutesRead}
+					</span>
+				</div>
 				<h1 class='mt-4 text-3xl text-neutral-100 font-serif'>
 					{note.data.title}
 				</h1>

@@ -1,8 +1,11 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content'
 import { format } from 'date-fns'
+import title from 'title'
 import Layout from '@/layouts/Layout.astro'
 import { formatDate } from '@/utils/helpers'
+
+export const prerender = true
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts')
@@ -18,7 +21,7 @@ type Props = {
 }
 
 const { post } = Astro.props
-const { Content } = await post.render()
+const { Content, remarkPluginFrontmatter } = await post.render()
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
@@ -45,11 +48,17 @@ const { Content } = await post.render()
 		</a>
 		<div class='post mx-auto flex w-full max-w-none flex-col gap-12'>
 			<header role='presentation'>
-				<span class='text-xs font-semibold uppercase'>
-					{format(new Date(post.data.date_published), 'PP')}
-				</span>
+				<div class='flex items-center gap-2'>
+					<span class='text-xs font-semibold uppercase'>
+						{format(new Date(post.data.date_published), 'PP')}
+					</span>
+					<span>·</span>
+					<span class='text-xs font-semibold uppercase'>
+						{remarkPluginFrontmatter.minutesRead}
+					</span>
+				</div>
 				<h1 class='mt-4 text-3xl text-neutral-100 font-serif'>
-					{post.data.title}
+					{title(post.data.title)}
 				</h1>
 			</header>
 

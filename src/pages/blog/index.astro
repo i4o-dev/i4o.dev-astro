@@ -1,19 +1,24 @@
 ---
 import { getCollection } from 'astro:content'
 import { format } from 'date-fns'
+import title from 'title'
 import Layout from '@/layouts/Layout.astro'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
-const allPosts = await getCollection('posts')
-const onlyPublished = allPosts.filter((post) => !post.data.draft)
-const groupedPosts = sortAndGroupPostsByYear(onlyPublished)
+const posts = await getCollection('posts', ({ data }) => {
+	return !data.draft
+})
+const groupedPosts = sortAndGroupPostsByYear(posts)
 const currentYear = new Date().getFullYear()
 const sortedYears = Object.keys(groupedPosts).sort(
 	(a, b) => parseInt(b, 10) - parseInt(a, 10)
 )
 ---
 
-<Layout title='Blog' description="Thoughts, ideas, and stories about web dev, indiehacking, and personal growth.">
+<Layout
+	title='Blog'
+	description='Thoughts, ideas, and stories about web dev, indiehacking, and personal growth.'
+>
 	<main class='flex flex-col gap-20'>
 		<article class='flex flex-col gap-8'>
 			<h1 class='text-3xl text-neutral-100 font-serif'>Blog</h1>
@@ -41,7 +46,7 @@ const sortedYears = Object.keys(groupedPosts).sort(
 												['hover:text-neutral-100 m-0 text-base font-normal leading-6']: true,
 											}}
 										>
-											{post.data.title}
+											{title(post.data.title)}
 										</a>
 										<span class='text-xs italic'>
 											{format(
