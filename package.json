@@ -17,6 +17,7 @@
         "@astrojs/rss": "^2.4.3",
         "@astrojs/sitemap": "^2.0.1",
         "@astrojs/tailwind": "^4.0.0",
+        "@astrojs/vercel": "^3.7.4",
         "@fontsource/inter": "^5.0.5",
         "@fontsource/merriweather": "^5.0.5",
         "@tailwindcss/typography": "^0.5.9",
