@@ -4,6 +4,8 @@ import { format } from 'date-fns'
 import Layout from '@/layouts/Layout.astro'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
+export const prerender = true
+
 const bookNotes = await getCollection('bookNotes', ({data}) => {
     return !data.draft
 })

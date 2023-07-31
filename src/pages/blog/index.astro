@@ -5,6 +5,8 @@ import title from 'title'
 import Layout from '@/layouts/Layout.astro'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
+export const prerender = true
+
 const posts = await getCollection('posts', ({ data }) => {
 	return !data.draft
 })
