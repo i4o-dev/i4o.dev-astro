@@ -34,11 +34,17 @@ export const projects: Project[] = [
 		isFeatured: true,
 	},
 	{
+		title: 'uxinspo',
+		description: 'Curated collection of real web app UIs for inspiration',
+		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
+		link: 'https://uxinspo.site/',
+		isFeatured: true,
+	},
+	{
 		title: 'Rescribe',
 		description: 'Docs and blog generator for Remix',
 		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
 		link: 'https://rescribe.site/',
-		isFeatured: true,
 	},
 	{
 		title: 'Synthwave Stack',
