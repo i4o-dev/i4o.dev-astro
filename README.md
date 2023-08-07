@@ -1,11 +1,8 @@
 # i4o.dev
 
--   Framework: [Remix](https://remix.run/)
--   Database: [Planetscale](https://planetscale.com/)
--   ORM: [Prisma](https://prisma.io/)
--   Components: [Catalyst UI](https://catalyst.i4o.dev/)
+-   Framework: [Astro](https://astro.build/)
 -   Styling: [TailwindCSS](https://tailwindcss.com/)
--   Deployment: [Railway](https://railway.app/)
+-   Deployment: [Railway](https://vercel.com/)
 
 ## Run Locally
 
@@ -26,14 +23,14 @@ Clone the project
 -   [x] Add blog and blog post page
 -   [x] Import blog posts from Ghost
 -   [x] Format all the imported blog posts properly
+-   [x] RSS
 -   [ ] Add resume page
--   [ ] RSS
--   [ ] Sitemap and other SEO stuff
+-   [x] Sitemap and other SEO stuff
 -   [ ] show icons in blog post list page for the language/framework the post is talking about.
 -   [ ] Support article series
--   [ ] Detect reading time and show in post list and post page
+-   [x] Detect reading time and show in post list and post page
 -   [ ] Show reading progress
--   [ ] Display now playing from Spotify
+-   [x] Display now playing from Spotify
 -   [ ] Search
 -   [ ] Newsletter in MDX
 
