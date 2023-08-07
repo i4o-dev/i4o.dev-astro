@@ -24,15 +24,16 @@ Clone the project
 -   [x] Import blog posts from Ghost
 -   [x] Format all the imported blog posts properly
 -   [x] RSS
--   [ ] Add resume page
 -   [x] Sitemap and other SEO stuff
+-   [x] Detect reading time and show in <del>post list and</del> post page
+-   [x] Display now playing from Spotify
+-   [ ] Add resume page
 -   [ ] show icons in blog post list page for the language/framework the post is talking about.
 -   [ ] Support article series
--   [x] Detect reading time and show in post list and post page
 -   [ ] Show reading progress
--   [x] Display now playing from Spotify
 -   [ ] Search
 -   [ ] Newsletter in MDX
+-   [ ] Project pages - each project has its own page along with a timeline of updates
 
 ## License
 
