@@ -1,8 +1,9 @@
 # i4o.dev
 
 -   Framework: [Astro](https://astro.build/)
+-   Theme: Modified version of [this portfolio theme](https://astro.build/themes/details/maewolff-portfolio-template/)
 -   Styling: [TailwindCSS](https://tailwindcss.com/)
--   Deployment: [Railway](https://vercel.com/)
+-   Deployment: [Vercel](https://vercel.com/)
 
 ## Run Locally
 
@@ -27,11 +28,12 @@ Clone the project
 -   [x] Sitemap and other SEO stuff
 -   [x] Detect reading time and show in <del>post list and</del> post page
 -   [x] Display now playing from Spotify
+-   [ ] Book covers on reading and book notes page (Reference: https://vjy.me/book)
 -   [ ] Add resume page
--   [ ] show icons in blog post list page for the language/framework the post is talking about.
+-   [ ] Show icons in the blog post list page for the language/framework the post is about.
 -   [ ] Support article series
--   [ ] Show reading progress
--   [ ] Search
+-   [ ] Show reading progress on the post page
+-   [ ] Search/Command Palette (using [cmdk from paco](https://cmdk.paco.me/))
 -   [ ] Newsletter in MDX
 -   [ ] Project pages - each project has its own page along with a timeline of updates
 
