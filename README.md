@@ -28,7 +28,7 @@ Clone the project
 -   [x] Sitemap and other SEO stuff
 -   [x] Detect reading time and show in <del>post list and</del> post page
 -   [x] Display now playing from Spotify
--   [ ] Book covers on reading and book notes page (Reference: https://vjy.me/book)
+-   [ ] Book covers on reading and book notes page (reference: https://vjy.me/book)
 -   [ ] Add resume page
 -   [ ] Show icons in the blog post list page for the language/framework the post is about.
 -   [ ] Support article series
