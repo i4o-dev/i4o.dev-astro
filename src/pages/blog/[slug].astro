@@ -20,7 +20,7 @@ const tweetMessage = `I just read this awesome post! Check it out:
 ${post.data.title} 👇`
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt}>
+<Layout title={post.data.title} description={post.data.excerpt} progress={true}>
 	<main class='flex w-full flex-col gap-12'>
 		<a
 			href='/blog'
@@ -64,7 +64,9 @@ ${post.data.title} 👇`
 				<Content />
 			</article>
 			<div class='mt-16 flex items-center gap-2'>
-				<span class='text-sm font-semibold uppercase'>Share this on:</span>
+				<span class='text-sm font-semibold uppercase'
+					>Share this on:</span
+				>
 				<a
 					href={`https://twitter.com/intent/tweet?${new URLSearchParams(
 						{

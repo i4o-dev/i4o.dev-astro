@@ -1,0 +1,18 @@
+<script>
+	let prog = document.getElementById('progress')
+
+	let body = document.body,
+		html = document.documentElement
+
+	const setProgress = () => {
+		let scrollFromTop = html.scrollTop || body.scrollTop
+		let height = html.scrollHeight - html.clientHeight
+		let width = (scrollFromTop / height) * 100 + '%'
+
+		prog.style.width = width
+	}
+
+	window.addEventListener('scroll', setProgress)
+
+	setProgress()
+</script>

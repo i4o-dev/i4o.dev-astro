@@ -15,7 +15,7 @@ const note = bookNotes.find((note) => note.slug === slug)
 const { Content, remarkPluginFrontmatter } = await note.render()
 ---
 
-<Layout title={note.data.title} description={note.data.excerpt}>
+<Layout title={note.data.title} description={note.data.excerpt} progress={true}>
 	<main class='flex w-full flex-col gap-12'>
 		<a
 			href='/book-notes'
