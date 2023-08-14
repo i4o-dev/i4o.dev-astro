@@ -18,7 +18,7 @@ const bookNotesCollection = defineCollection({
 		author: z.string(),
 		date_published: z.date(),
 		draft: z.boolean().default(false),
-        cover: z.string().default('')
+		cover: z.string().default(''),
 	}),
 })
 

@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import SocialLinks from '@/components/SocialLinks.astro'
+import SubscribeForm from '@/components/SubscribeForm.astro'
 import Link from '@/components/shared/Link.astro'
 ---
 
@@ -8,7 +9,9 @@ import Link from '@/components/shared/Link.astro'
 	<main class='flex flex-col gap-20'>
 		<article class='flex flex-col gap-8'>
 			<h1 class='text-3xl text-neutral-100 font-serif'>About</h1>
-			<section class='flex flex-col prose prose-invert prose-p:my-4 first:prose-p:mt-0'>
+			<section
+				class='flex flex-col prose prose-invert prose-p:my-4 first:prose-p:mt-0'
+			>
 				<p>Hi! I'm a software engineer residing in Bangalore, India.</p>
 				<p>
 					In my free time, I work on <Link
@@ -50,6 +53,7 @@ import Link from '@/components/shared/Link.astro'
 					/>. And if you happen to like what you read, let me know :)
 				</p>
 			</section>
+			<SubscribeForm />
 			<SocialLinks />
 		</article>
 	</main>

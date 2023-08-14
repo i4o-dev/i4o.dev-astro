@@ -29,14 +29,14 @@ Clone the project
 -   [x] Detect reading time and show in <del>post list and</del> post page
 -   [x] Display now playing from Spotify
 -   [x] Show reading progress on the post page
--   [ ] Book covers on reading and book notes page (reference: https://vjy.me/book)
--   [ ] Newsletter in MDX
+-   [x] Book covers on reading and book notes page (reference: https://vjy.me/book)
+-   [x] Newsletter and Subscribe form
+-   [ ] Project pages - each project has its own page along with a timeline of updates
 -   [ ] Support article series
 -   [ ] Show work-in-progress posts (reference: https://www.wking.dev/library/everything-i-know-about-multiple-actions-on-the-same-remix-route)
 -   [ ] Add resume page
 -   [ ] Show icons in the blog post list page for the language/framework the post is about.
 -   [ ] Search/Command Palette (using [cmdk from paco](https://cmdk.paco.me/))
--   [ ] Project pages - each project has its own page along with a timeline of updates
 
 ## License
 

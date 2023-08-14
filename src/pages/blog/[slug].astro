@@ -3,6 +3,7 @@ import { CollectionEntry, getCollection } from 'astro:content'
 import { format } from 'date-fns'
 import title from 'title'
 import Layout from '@/layouts/Layout.astro'
+import SubscribeForm from '@/components/SubscribeForm.astro'
 import { SITE_URL } from '@/data/config'
 
 const { slug } = Astro.params
@@ -63,10 +64,15 @@ ${post.data.title} 👇`
 			>
 				<Content />
 			</article>
-			<div class='mt-16 flex items-center gap-2'>
-				<span class='text-sm font-semibold uppercase'
-					>Share this on:</span
-				>
+			<div class='mt-2 flex flex-col items-start gap-2'>
+				<span class='text-sm font-normal'>
+					If you liked this post, consider subscribing to my
+					newsletter:
+				</span>
+				<SubscribeForm />
+			</div>
+			<div class='mt-4 flex items-center gap-2'>
+				<span class='text-sm font-semibold'>Share this on:</span>
 				<a
 					href={`https://twitter.com/intent/tweet?${new URLSearchParams(
 						{
