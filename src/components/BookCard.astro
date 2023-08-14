@@ -1,0 +1,11 @@
+---
+import type { Book } from '@/data/books'
+
+type Props = Book
+
+const { title, author, cover } = Astro.props
+---
+
+<figure class='rounded-2xl rounded-tl-none rounded-bl-none overflow-hidden mb-8'>
+    <img class='w-full h-full object-cover' src={cover} />
+</figure>

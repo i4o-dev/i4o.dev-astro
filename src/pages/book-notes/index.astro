@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content'
 import { format } from 'date-fns'
 import Layout from '@/layouts/Layout.astro'
+import BookCard from '@/components/BookCard.astro'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
-const bookNotes = await getCollection('bookNotes', ({data}) => !data.draft)
+const bookNotes = await getCollection('bookNotes', ({ data }) => !data.draft)
 const sortedNotes = bookNotes.sort(
 	(a, b) =>
 		new Date(b.data.date_published).valueOf() -
@@ -17,28 +18,20 @@ const sortedNotes = bookNotes.sort(
 		<article class='flex flex-col gap-8'>
 			<h1 class='text-3xl text-neutral-100 font-serif'>Book Notes</h1>
 			<section class='flex flex-col gap-4'>
-				<div class='flex flex-col items-start gap-4'>
+				<div class='w-full columns-3 gap-8'>
 					{
 						sortedNotes.map((post, index) => (
-							<div
-								class='flex flex-wrap items-center justify-start gap-2 text-left'
+							<a
+								class='w-full columns-3 gap-8'
+								href={`/book-notes/${post.slug}`}
 								key={`post-${index}`}
 							>
-								<a
-									href={`/book-notes/${post.slug}`}
-									class:list={{
-										['hover:text-neutral-100 m-0 text-base font-normal leading-6']: true,
-									}}
-								>
-									{post.data.title}
-								</a>
-								<span class='text-xs italic'>
-									{format(
-										new Date(post.data.date_published),
-										'MMM dd'
-									)}
-								</span>
-							</div>
+								<BookCard
+									title={post.data.title}
+									description={post.data.excerpt}
+									cover={post.data.cover}
+								/>
+							</a>
 						))
 					}
 				</div>
