@@ -14,6 +14,10 @@ import remarkReadingTime from './src/utils/readingTime.mjs'
 
 // https://astro.build/config
 export default defineConfig({
+	adapter: vercel(),
+	experimental: {
+		viewTransitions: true,
+	},
 	integrations: [
 		tailwind(),
 		sitemap(),
@@ -23,7 +27,6 @@ export default defineConfig({
 		}),
 		partytown(),
 	],
-	site: SITE_URL,
 	markdown: {
 		drafts: true,
 		remarkPlugins: [remarkCapitalize, remarkGfm, remarkReadingTime],
@@ -35,5 +38,5 @@ export default defineConfig({
 		},
 	},
 	output: 'server',
-	adapter: vercel(),
+	site: SITE_URL,
 })

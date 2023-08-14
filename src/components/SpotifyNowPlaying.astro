@@ -9,6 +9,8 @@ const data = await nowPlayingTrack.json()
 <div
 	id='spotify'
 	class='group w-fit flex items-center justify-center hover:bg-brand-500 border border-neutral-700 hover:border-brand-500 rounded-full'
+    transition:name='spotify-now-playing'
+    transition:persist
 >
 	{
 		data.isPlaying ? (

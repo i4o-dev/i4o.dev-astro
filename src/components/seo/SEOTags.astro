@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
 import { SEO } from 'astro-seo'
 import { SITE } from '@/data/site'
 import { SITE_URL } from '@/data/config'
@@ -87,4 +88,6 @@ const openGraph = {
 			],
 		}}
 	/>
+
+    <ViewTransitions />
 </head>
