@@ -1,18 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import BookCard from '@/components/BookCard.tsx'
+import Books from '@/components/Books.tsx'
 import SocialLinks from '@/components/SocialLinks.tsx'
 import Link from '@/components/shared/Link.tsx'
 import { convertAsteriskToStrongTag, formatDate } from '@/utils/helpers'
 
-import {
-	allTimeFavorites,
-	data,
-	currentlyReading,
-	onMyRadar,
-	readThisYear,
-	toRead,
-} from '@/data/books'
+import { data } from '@/data/books'
 import { Content } from '@/content/reading/reading.mdx'
 ---
 
@@ -28,73 +21,7 @@ import { Content } from '@/content/reading/reading.mdx'
 				set:html={convertAsteriskToStrongTag(data.description)}
 			/>
 		</article>
-		<article class='flex flex-col gap-16'>
-			<section class='flex flex-col gap-8'>
-				<h2 class='text-xl text-neutral-100 font-medium'>
-					Currently Reading
-				</h2>
-				<div class='w-full columns-3 gap-8'>
-					{
-						currentlyReading.length !== 0 &&
-							currentlyReading.map((book) => (
-								<BookCard {...book} />
-							))
-					}
-				</div>
-			</section>
-			<section class='flex flex-col gap-8'>
-				<h2 class='text-xl text-neutral-100 font-medium'>2023</h2>
-				<div class='w-full columns-3 gap-8'>
-					{
-						readThisYear.length !== 0 &&
-							readThisYear.map((book) => <BookCard {...book} />)
-					}
-				</div>
-			</section>
-			<section class='flex flex-col gap-8'>
-				<div>
-					<h2 class='text-xl mb-2 text-neutral-100 font-medium'>
-						On My Radar
-					</h2>
-					<span class='text-sm'
-						>I want to read these in the coming weeks/months</span
-					>
-				</div>
-				<div class='w-full columns-3 gap-8'>
-					{
-						onMyRadar.length !== 0 &&
-							onMyRadar.map((book) => <BookCard {...book} />)
-					}
-				</div>
-			</section>
-			<section class='flex flex-col gap-8'>
-				<div>
-					<h2 class='text-xl mb-2 text-neutral-100 font-medium'>
-						To Read
-					</h2>
-					<span class='text-sm'>I'll read these at some point</span>
-				</div>
-				<div class='w-full columns-3 gap-8'>
-					{
-						toRead.length !== 0 &&
-							toRead.map((book) => <BookCard {...book} />)
-					}
-				</div>
-			</section>
-			<section class='flex flex-col gap-8'>
-				<h2 class='text-xl text-neutral-100 font-medium'>
-					All Time Favorites
-				</h2>
-				<div class='w-full columns-3 gap-8'>
-					{
-						allTimeFavorites.length !== 0 &&
-							allTimeFavorites.map((book) => (
-								<BookCard {...book} />
-							))
-					}
-				</div>
-			</section>
-		</article>
+        <Books client:load />
 		<article class='mdx prose prose-invert max-w-none'>
 			<Content />
 		</article>
