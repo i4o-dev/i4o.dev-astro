@@ -12,7 +12,7 @@ export type Book = {
 export const data: BookPresentation = {
 	title: 'Reading',
 	description:
-		"I read books regularly. I'm always reading two books at any time — one fiction and one non-fiction. I've grouped the books in the following categories: currently reading, on my reading list, and read in the past.<br /><br />I recently started taking notes of some of the books I'm reading. I'm publishing them here on my site. You can check them out on the <a class='underline decoration-dashed underline-offset-8' href='/book-notes' target='_self'>book notes</a>.",
+		"I read books regularly. I'm always reading two books at any time — one fiction and one non-fiction. I've grouped the books in the following categories: currently reading, on my reading list, and read in the past. Do you have a book recommendation? Let me know on <a class='underline decoration-dashed underline-offset-8' href='https://twitter.com/i4o_dev' target='_blank'>Twitter</a>.<br /><br />I recently started taking notes of some of the books I'm reading. I'm publishing them here on my site. You can check them out on the <a class='underline decoration-dashed underline-offset-8' href='/book-notes' target='_self'>book notes</a>.",
 }
 
 export const currentlyReading: Book[] = [
@@ -60,6 +60,11 @@ export const readThisYear: Book[] = [
 		cover: '/images/book-covers/basb.jpg',
 	},
 	{
+		title: 'Lives of the Stoics',
+		author: 'Ryan Holiday',
+		cover: '/images/book-covers/lives-of-the-stoics.jpg',
+	},
+	{
 		title: 'Demon Slayer: Kimetsu no Yaiba',
 		author: 'Koyoharu Gotouge',
 		cover: '/images/book-covers/demon-slayer.webp',
@@ -98,6 +103,41 @@ export const allTimeFavorites: Book[] = [
 		cover: '/images/book-covers/three-body-problem.jpg',
 	},
 	{
+		title: '1984',
+		author: 'George Orwell',
+		cover: '/images/book-covers/1984.jpg',
+	},
+	{
+		title: 'Snow Crash',
+		author: 'Neal Stephenson',
+		cover: '/images/book-covers/snow-crash.jpg',
+	},
+	{
+		title: 'Lord of the Rings',
+		author: 'J. R. R. Tolkien',
+		cover: '/images/book-covers/lord-of-the-rings.jpg',
+	},
+	{
+		title: 'The Adventures of Sherlock Holmes',
+		author: 'Arthur Conan Doyle',
+		cover: '/images/book-covers/sherlock-holmes.jpg',
+	},
+	{
+		title: 'The Ocean at the End of the Lane',
+		author: 'Neil Gaiman',
+		cover: '/images/book-covers/ocean.webp',
+	},
+	{
+		title: 'Dark Nights Metal',
+		author: 'Scott Snyder',
+		cover: '/images/book-covers/dark-nights-metal.jpg',
+	},
+	{
+		title: 'House of X & Power of X',
+		author: 'Jonathan Hickman',
+		cover: '/images/book-covers/house-powers-of-x.jpg',
+	},
+	{
 		title: 'Atomic Habits',
 		author: 'James Clear',
 		cover: '/images/book-covers/atomic-habits.jpg',
@@ -126,5 +166,156 @@ export const allTimeFavorites: Book[] = [
 		title: "Surely You're Joking, Mr. Feynman!",
 		author: 'Richard Feynman',
 		cover: '/images/book-covers/surely-youre-joking.jpg',
+	},
+]
+
+export const onMyRadar: Book[] = [
+	{
+		title: 'Zero to Production in Rust',
+		author: 'Luca Palmieri',
+		cover: '/images/book-covers/z2p.png',
+	},
+	{
+		title: 'Meditations',
+		author: 'Marcus Aurelius (Translated by Gregory Hays)',
+		cover: '/images/book-covers/meditations.jpeg',
+	},
+	{
+		title: 'The Boron Letters',
+		author: 'Gary Halbert',
+		cover: '/images/book-covers/boron-letters.jpg',
+	},
+	{
+		title: 'The Pragmatic Programmer',
+		author: 'David Thomas & Andrew Hunt',
+		cover: '/images/book-covers/pragmatic-programmer.jpg',
+	},
+	{
+		title: 'The Elements of Style',
+		author: 'William Strunk Jr & E. B. White',
+		cover: '/images/book-covers/elements-of-style.jpg',
+	},
+	{
+		title: 'Sense of Style',
+		author: 'Steven Pinker',
+		cover: '/images/book-covers/sense-of-style.jpg',
+	},
+	{
+		title: 'On Writing Well',
+		author: 'William Zinsser',
+		cover: '/images/book-covers/on-writing-well.jpg',
+	},
+	{
+		title: 'Foundation',
+		author: 'Isaac Asimov',
+		cover: '/images/book-covers/foundation.jpg',
+	},
+	{
+		title: 'Sapiens',
+		author: 'Yuval Noah Harari',
+		cover: '/images/book-covers/sapiens.jpg',
+	},
+	{
+		title: 'Writing to Learn',
+		author: 'William Zinsser',
+		cover: '/images/book-covers/writing-to-learn.jpg',
+	},
+	{
+		title: 'The Art and Business of Online Writing',
+		author: 'Nicolas Cole',
+		cover: '/images/book-covers/online-writing.jpg',
+	},
+	{
+		title: 'The Iliad',
+		author: 'Homer',
+		cover: '/images/book-covers/iliad.jpeg',
+	},
+	{
+		title: 'The Odyssey',
+		author: 'Homer',
+		cover: '/images/book-covers/odyssey.jpg',
+	},
+	{
+		title: 'How to Think like a Roman Emperor',
+		author: 'Donald Robertson',
+		cover: '/images/book-covers/roman-emperor.jpg',
+	},
+]
+
+export const toRead: Book[] = [
+	{
+		title: "Tess of the d'Urbervilles",
+		author: 'Thomas Hardy',
+		cover: '/images/book-covers/tess.jpg',
+	},
+	{
+		title: 'Time Machine',
+		author: 'H. G. Wells',
+		cover: '/images/book-covers/time-machine.jpg',
+	},
+	{
+		title: 'Flatland',
+		author: 'Edwin A. Abbott',
+		cover: '/images/book-covers/flatland.jpg',
+	},
+	{
+		title: 'The Brothers Karamazov',
+		author: 'Fyodor Dostoyevsky',
+		cover: '/images/book-covers/brothers-karamazov.jpg',
+	},
+	{
+		title: 'The Count of Monte Cristo',
+		author: 'Alexandre Dumas',
+		cover: '/images/book-covers/monte-cristo.jpg',
+	},
+	{
+		title: "A supposedly fun thing I'll never do",
+		author: 'David Foster Wallace',
+		cover: '/images/book-covers/supposedly-fun.jpg',
+	},
+	{
+		title: 'Four Thousand Weeks',
+		author: 'Oliver Burkeman',
+		cover: '/images/book-covers/4000-weeks.jpg',
+	},
+	{
+		title: 'Leonardo Da Vinci',
+		author: 'Walter Isaacson',
+		cover: '/images/book-covers/da-vinci.jpg',
+	},
+	{
+		title: 'Walden',
+		author: 'Henry David Thoreau',
+		cover: '/images/book-covers/walden.jpg',
+	},
+	{
+		title: 'The Great Mental Models',
+		author: 'Farnam Street',
+		cover: '/images/book-covers/great-mental-models.jpg',
+	},
+	{
+		title: 'Anna Karenina',
+		author: 'Leo Tolstoy',
+		cover: '/images/book-covers/anna-karenina.webp',
+	},
+	{
+		title: 'Don Quixote',
+		author: 'Miguel de Cervantes',
+		cover: '/images/book-covers/don-quixote.jpg',
+	},
+	{
+		title: 'Moby Dick',
+		author: 'Herman Melville',
+		cover: '/images/book-covers/moby-dick.jpg',
+	},
+	{
+		title: 'Indistractable',
+		author: 'Nir Eyal',
+		cover: '/images/book-covers/indistractable.jpg',
+	},
+	{
+		title: 'Keep Going',
+		author: 'Austin Kleon',
+		cover: '/images/book-covers/keep-going.jpg',
 	},
 ]

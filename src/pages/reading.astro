@@ -9,7 +9,9 @@ import {
 	allTimeFavorites,
 	data,
 	currentlyReading,
+	onMyRadar,
 	readThisYear,
+	toRead,
 } from '@/data/books'
 import { Content } from '@/content/reading/reading.mdx'
 ---
@@ -46,6 +48,36 @@ import { Content } from '@/content/reading/reading.mdx'
 					{
 						readThisYear.length !== 0 &&
 							readThisYear.map((book) => <BookCard {...book} />)
+					}
+				</div>
+			</section>
+			<section class='flex flex-col gap-8'>
+				<div>
+					<h2 class='text-xl mb-2 text-neutral-100 font-medium'>
+						On My Radar
+					</h2>
+					<span class='text-sm'
+						>I want to read these in the coming weeks/months</span
+					>
+				</div>
+				<div class='w-full columns-3 gap-8'>
+					{
+						onMyRadar.length !== 0 &&
+							onMyRadar.map((book) => <BookCard {...book} />)
+					}
+				</div>
+			</section>
+			<section class='flex flex-col gap-8'>
+				<div>
+					<h2 class='text-xl mb-2 text-neutral-100 font-medium'>
+						To Read
+					</h2>
+					<span class='text-sm'>I'll read these at some point</span>
+				</div>
+				<div class='w-full columns-3 gap-8'>
+					{
+						toRead.length !== 0 &&
+							toRead.map((book) => <BookCard {...book} />)
 					}
 				</div>
 			</section>
