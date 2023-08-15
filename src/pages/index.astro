@@ -2,11 +2,12 @@
 import { getCollection } from 'astro:content'
 
 import Layout from '@/layouts/Layout.astro'
-import SocialLinks from '@/components/SocialLinks.astro'
-import SubscribeForm from '@/components/SubscribeForm.astro'
+import Hero from '@/components/Hero.tsx'
+import LatestPosts from '@/components/LatestPosts.tsx'
+import FeaturedProjects from '@/components/FeaturedProjects.tsx'
 import PostCard from '@/components/PostCard.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
-import Link from '@/components/shared/Link.astro'
+import Link from '@/components/shared/Link.tsx'
 import {
 	convertAsteriskToStrongTag,
 	getNowPlaying,
@@ -27,67 +28,10 @@ const sortedPosts = posts.sort(
 
 <Layout description='Software Engineer, Maker, Writer'>
 	<main class='flex flex-col gap-20'>
-		<article class='flex flex-col gap-8'>
-			<h1 class='text-3xl text-neutral-100 font-serif'>
-				{presentation.title}
-			</h1>
-			<p
-				class='max-w-[60ch] leading-6 prose prose-invert'
-				set:html={convertAsteriskToStrongTag(presentation.description)}
-			/>
-			<SubscribeForm />
-			<SocialLinks />
-		</article>
+		<Hero />
 
-		<article class='flex flex-col gap-8'>
-			<header class='flex w-full flex-row justify-between gap-2'>
-				<h2 class='text-xl text-neutral-100'>Latest Posts</h2>
-				<Link
-					href='/blog'
-					label='See all posts'
-					isUnderline
-					target='_self'
-				/>
-			</header>
-			{posts.length === 0 && <p>Soon, stay connected 👀...</p>}
+		<LatestPosts posts={sortedPosts} />
 
-			<section class='grid grid-cols-1 gap-4 md:grid-cols-2'>
-				{
-					sortedPosts.length !== 0 &&
-						sortedPosts
-							.slice(0, 2)
-							.map((post) => (
-								<PostCard
-									publishedAt={post.data.date_published}
-									title={post.data.title}
-									description={post.data.excerpt}
-									slug={post.slug}
-								/>
-							))
-				}
-			</section>
-		</article>
-
-		<article class='flex flex-col gap-8'>
-			<header class='flex w-full flex-row justify-between gap-2'>
-				<h2 class='text-xl text-neutral-100'>Featured Projects</h2>
-				<Link
-					href='/projects'
-					label='See all projects'
-					isUnderline
-					target='_self'
-				/>
-			</header>
-			{projects.length === 0 && <p>Oops, I must work^^^^^</p>}
-
-			<section class='flex flex-col gap-4'>
-				{
-					projects.length !== 0 &&
-						projects
-							.filter((project) => project.isFeatured)
-							.map((project) => <ProjectCard {...project} />)
-				}
-			</section>
-		</article>
+        <FeaturedProjects projects={projects} />
 	</main>
 </Layout>
