@@ -4,21 +4,21 @@ import SubscribeForm from '@/components/SubscribeForm'
 import { convertAsteriskToStrongTag } from '@/utils/helpers'
 
 export default function Hero() {
-    return (
-        <article className='flex flex-col gap-8'>
-            <h1 className='font-serif text-3xl text-neutral-100'>
-                {presentation.title}
-            </h1>
-            <p
-                className='prose prose-invert max-w-[60ch] leading-6'
-                dangerouslySetInnerHTML={{
-                    __html: convertAsteriskToStrongTag(
-                        presentation.description
-                    ),
-                }}
-            />
-            <SubscribeForm />
-            <SocialLinks />
-        </article>
-    )
+	return (
+		<article className='flex flex-col gap-8'>
+			<h1 className='font-serif text-3xl text-neutral-100'>
+				{presentation.title}
+			</h1>
+			<p
+				className='prose prose-invert max-w-[60ch] leading-6'
+				dangerouslySetInnerHTML={{
+					__html: convertAsteriskToStrongTag(
+						presentation.description
+					),
+				}}
+			/>
+			<SubscribeForm />
+			<SocialLinks />
+		</article>
+	)
 }
