@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import type { Book } from '@/data/books'
+import { motion } from 'framer-motion'
 
 export default function BookCard({ cover }: Book) {
 	return (

@@ -8,6 +8,7 @@ export default function ProjectCard({
 }: Project) {
 	// const formatTech = (values: string[]) =>
 	//     values.toString().replaceAll(',', ' • ')
+
 	return (
 		<>
 			{isComingSoon ? (

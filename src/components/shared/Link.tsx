@@ -17,7 +17,7 @@ export default function Link({ href, label, isUnderline, ...props }: Props) {
 			} cursor-pointer hover:text-neutral-100`}
 			{...props}
 			rel='noreferrer'
-			target='_blank'
+			target={props.target || '_blank'}
 		>
 			{label}
 			<span className='sr-only'>{label} link</span>
