@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import { format } from 'date-fns'
 import Layout from '@/layouts/Layout.astro'
-import BookCard from '@/components/BookCard.astro'
+import BookCard from '@/components/BookCard.tsx'
 import { sortAndGroupPostsByYear } from '@/utils/helpers'
 
 const bookNotes = await getCollection('bookNotes', ({ data }) => !data.draft)
