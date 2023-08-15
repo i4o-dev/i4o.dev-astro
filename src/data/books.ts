@@ -181,6 +181,11 @@ export const onMyRadar: Book[] = [
 		cover: '/images/book-covers/meditations.jpeg',
 	},
 	{
+		title: 'The SaaS Playbook',
+		author: 'Rob Walling',
+		cover: '/images/book-covers/saas-playbook.jpg',
+	},
+	{
 		title: 'The Boron Letters',
 		author: 'Gary Halbert',
 		cover: '/images/book-covers/boron-letters.jpg',
