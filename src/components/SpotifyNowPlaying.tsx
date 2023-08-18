@@ -18,7 +18,7 @@ export default function SpotifyNowPlaying({ data }: { data: any }) {
 	return (
 		<div
 			id='spotify'
-			className='group flex w-fit items-center justify-center rounded-full border border-neutral-700 hover:border-brand-500 hover:bg-brand-500'
+			className='group flex w-fit items-center justify-center rounded-full border border-neutral-700 transition-all duration-200 hover:border-brand-500 hover:bg-brand-500'
 		>
 			{data.isPlaying ? (
 				<a href={data.url} target='_blank' rel='noreferrer noopener'>

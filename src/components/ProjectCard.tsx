@@ -24,7 +24,7 @@ export default function ProjectCard({
 				</div>
 			) : (
 				<a
-					className='group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:border-neutral-400 md:flex-row md:items-center'
+					className='group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-200 hover:border-neutral-400 md:flex-row md:items-center'
 					href={link}
 					target='_blank'
 					rel='noreferrer'
@@ -44,14 +44,14 @@ export default function ProjectCard({
 						<path
 							d='M5.25 12.75L12.75 5.25'
 							stroke='#999999'
-							stroke-linecap='round'
-							stroke-linejoin='round'
+							strokeLinecap='round'
+							strokeLinejoin='round'
 						/>
 						<path
 							d='M5.25 5.25H12.75V12.75'
 							stroke='#999999'
-							stroke-linecap='round'
-							stroke-linejoin='round'
+							strokeLinecap='round'
+							strokeLinejoin='round'
 						/>
 					</svg>
 				</a>
