@@ -11,6 +11,7 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import remarkCapitalize from 'remark-capitalize'
 import remarkGfm from 'remark-gfm'
 import remarkReadingTime from './src/utils/readingTime.mjs'
+import markdoc from '@astrojs/markdoc'
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
 			drafts: true,
 		}),
 		partytown(),
+		markdoc(),
 	],
 	markdown: {
 		drafts: true,
@@ -37,6 +39,6 @@ export default defineConfig({
 			wrap: false,
 		},
 	},
-	output: 'server',
+	output: 'hybrid',
 	site: SITE_URL,
 })
