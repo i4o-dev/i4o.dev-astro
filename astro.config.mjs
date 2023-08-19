@@ -39,6 +39,6 @@ export default defineConfig({
 			wrap: false,
 		},
 	},
-	output: 'hybrid',
+	output: 'server',
 	site: SITE_URL,
 })
