@@ -1,0 +1,9 @@
+---
+title: Authentication in Remix with remix-auth
+excerpt: Setting up auth in a Remix application
+publishedAt:
+  discriminant: false
+---
+I've been getting into Remix recently, and decided to move one of my Next.js projects to Remix. The move should be straight forward with the exception of authentication. Or so I thought.
+
+With Next.js, implementing authentication was pretty easy with next-auth. I just have to pick the auth providers I need, pass in the required API keys and secrets, wrap our `_app` component in a `SessionProvider`, and we're done. Next Auth takes care of everything else. It even auto-generates a sign in page but...
