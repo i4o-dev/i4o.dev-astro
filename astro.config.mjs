@@ -15,7 +15,7 @@ import markdoc from '@astrojs/markdoc'
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel(),
+	adapter: vercel({ functionPerRoute: false }),
 	integrations: [
 		tailwind(),
 		sitemap(),
