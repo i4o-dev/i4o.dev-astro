@@ -22,8 +22,6 @@
 		"@astrojs/vercel": "^3.7.4",
 		"@fontsource/inter": "^5.0.5",
 		"@fontsource/merriweather": "^5.0.5",
-		"@keystatic/astro": "^0.0.9",
-		"@keystatic/core": "^0.0.116",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/react": "^18.0.21",
 		"@types/react-dom": "^18.0.21",
