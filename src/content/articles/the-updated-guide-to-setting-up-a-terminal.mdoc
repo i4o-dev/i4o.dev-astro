@@ -46,7 +46,6 @@ Alright, let's get to the good stuff. Like I said before, Kitty has a terminal m
 Stuff like, creating sessions, windows, and panes, changing directories, running dev servers, etc. Tmux also lets us execute commands when we create new windows and panes.
 
 The starting point of my tmux workflow is a keybind I set up in my `zshrc`. When I press `Ctrl + f`, zsh runs a script called `tmux-sessionizer`.
-![](__GHOST_URL__/content/images/2023/02/tmux-sessionizer-keybind.png)
 This script does two things:
 
 It first lists all the directories that I open and work in, on a regular basis. This includes code repositories for side projects, work, open-source projects I'm interested in exploring, learning repos, etc. From this list, I can type and search for the particular directory I want to go into, using a command-line fuzzy finder called [fzf](https://github.com/junegunn/fzf).
