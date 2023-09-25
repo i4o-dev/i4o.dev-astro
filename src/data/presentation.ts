@@ -20,11 +20,11 @@ const presentation: Presentation = {
 	socials: [
 		{
 			label: 'Twitter',
-			link: 'https://twitter.com/i4o_dev',
+			link: 'https://twitter.com/0xi4o',
 		},
 		{
 			label: 'Github',
-			link: 'https://github.com/i4o-dev',
+			link: 'https://github.com/0xi4o',
 		},
 	],
 }

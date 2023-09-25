@@ -12,7 +12,7 @@ export type Book = {
 export const data: BookPresentation = {
 	title: 'Reading',
 	description:
-		"I read books regularly. I'm always reading two books at any time — one fiction and one non-fiction. I've grouped the books in the following categories: currently reading, on my reading list, and read in the past. Do you have a book recommendation? Let me know on <a class='underline decoration-dashed underline-offset-8' href='https://twitter.com/i4o_dev' target='_blank'>Twitter</a>.<br /><br />I recently started taking notes of some of the books I'm reading. I'm publishing them here on my site. You can check them out on the <a class='underline decoration-dashed underline-offset-8' href='/book-notes' target='_self'>book notes</a>.",
+		"I read books regularly. I'm always reading two books at any time — one fiction and one non-fiction. I've grouped the books in the following categories: currently reading, on my reading list, and read in the past. Do you have a book recommendation? Let me know on <a class='underline decoration-dashed underline-offset-8' href='https://twitter.com/0xi4o' target='_blank'>Twitter</a>.<br /><br />I recently started taking notes of some of the books I'm reading. I'm publishing them here on my site. You can check them out on the <a class='underline decoration-dashed underline-offset-8' href='/book-notes' target='_self'>book notes</a>.",
 }
 
 export const currentlyReading: Book[] = [
