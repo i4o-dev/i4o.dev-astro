@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	bracketSpacing: true,
 	endOfLine: 'lf',
 	bracketSameLine: false,

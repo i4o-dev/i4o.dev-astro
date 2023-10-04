@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	extends: ['plugin:astro/recommended'],
 	overrides: [
 		{
