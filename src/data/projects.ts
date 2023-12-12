@@ -20,17 +20,17 @@ export const data: ProjectPresentation = {
 
 export const projects: Project[] = [
 	{
-		title: 'Aurelius',
-		description: 'Minimal, open-source writing app',
-		// tech: ['React', 'Remix', 'TypeScript'],
-		link: 'https://aurelius.ink/',
-		isFeatured: true,
-	},
-	{
 		title: 'Catalyst UI',
 		description: 'React component library built using Radix and Tailwind',
 		// tech: ['React', 'TypeScript', 'Radix UI', 'TailwindCSS'],
-		link: 'https://catalyst-ui.com',
+		link: 'https://catalyst-ui.netlify.app/',
+		isFeatured: true,
+	},
+	{
+		title: 'Rescribe',
+		description: 'Docs and blog generator for Remix',
+		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
+		link: 'https://github.com/i4o-oss/rescribe',
 		isFeatured: true,
 	},
 	{
@@ -41,16 +41,16 @@ export const projects: Project[] = [
 		isFeatured: true,
 	},
 	{
-		title: 'Rescribe',
-		description: 'Docs and blog generator for Remix',
-		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
-		link: 'https://rescribe.site/',
+		title: 'Aurelius',
+		description: 'Minimal, open-source writing app',
+		// tech: ['React', 'Remix', 'TypeScript'],
+		link: 'https://github.com/i4o-oss/aurelius',
 	},
 	{
 		title: 'Synthwave Stack',
 		description: 'Remix Stack for quickly shipping web apps',
 		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
-		link: 'https://rescribe.site/',
+		link: 'https://synthwave-stack.fly.dev/',
 	},
 	{
 		title: 'cargo-use',

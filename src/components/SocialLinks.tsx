@@ -14,13 +14,13 @@ export default function SocialLinks() {
 					{presentation.socials.length - 1 !== index && <li>/</li>}
 				</Fragment>
 			))}
-			<li>/</li>
-			<li>
-				<Link
-					href={`mailto:${presentation.mail}`}
-					label={presentation.mail}
-				/>
-			</li>
+			{/*<li>/</li>*/}
+			{/*<li>*/}
+			{/*	<Link*/}
+			{/*		href={`mailto:${presentation.mail}`}*/}
+			{/*		label={presentation.mail}*/}
+			{/*	/>*/}
+			{/*</li>*/}
 		</ul>
 	)
 }
