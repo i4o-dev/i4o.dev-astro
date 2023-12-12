@@ -28,7 +28,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Rescribe',
-		description: 'Docs and blog generator for Remix',
+		description: 'Content manager for Remix. Write content in markdown right in your codebase.',
 		// tech: ['React', 'Remix', 'MDX', 'TailwindCSS'],
 		link: 'https://github.com/i4o-oss/rescribe',
 		isFeatured: true,
