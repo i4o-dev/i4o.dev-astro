@@ -22,7 +22,7 @@ const nowPlayingTrack = await getCurrentTrack()
 const data = await nowPlayingTrack.json()
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang='en'>
 	<SEOTags title={title || 'Ilango Rajagopal'} description={description} />
 
@@ -43,9 +43,9 @@ const data = await nowPlayingTrack.json()
 		{
 			import.meta.env.MODE === 'production' ? (
 				<script
-					async
-					src='https://analytics.i4o.dev/script.js'
-					data-website-id='a23700f3-870e-47f9-8912-52e806ef4d43'
+					defer
+					data-domain='i4o.dev'
+					src='https://plausible-analytics-production-f645.up.railway.app/js/script.js'
 				/>
 			) : null
 		}
@@ -64,6 +64,7 @@ const data = await nowPlayingTrack.json()
 				},
 			}
 		</script>
-		<script is:inline src='https://substackapi.com/widget.js' async />
+		<script is:inline src='https://substackapi.com/widget.js' async
+		></script>
 	</body>
 </html>
